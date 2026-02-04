@@ -17,6 +17,13 @@ class DataProcessor:
         """Load and process tenniscore sales data"""
         df = pd.read_csv(self.raw_path / 'tenniscore_sales.csv')
         
+        # Ensure numeric columns are properly typed
+        numeric_cols = ['yoy_growth_pct', 'gen_z_growth_pct', 'millennial_growth_pct', 
+                    'gen_x_growth_pct', 'baby_boomer_growth_pct']
+        for col in numeric_cols:
+            if col in df.columns:
+                df[col] = pd.to_numeric(df[col], errors='coerce')
+        
         # Melt demographic columns
         demo_cols = ['gen_z_growth_pct', 'millennial_growth_pct', 'gen_x_growth_pct', 'baby_boomer_growth_pct']
         
@@ -29,6 +36,9 @@ class DataProcessor:
         
         # Clean demographic names
         melted['demographic'] = melted['demographic'].str.replace('_growth_pct', '')
+        
+        # Ensure demo_growth_pct is numeric
+        melted['demo_growth_pct'] = pd.to_numeric(melted['demo_growth_pct'], errors='coerce')
         
         # Drop rows with missing values
         melted = melted.dropna()
