@@ -1,0 +1,16 @@
+year,market_value_billion_usd,cagr_pct,segment,sports_jersey_market_billion_usd,football_jersey_market_billion_usd,womens_jersey_growth_pct,custom_jersey_growth_pct,tournament_spike_pct
+2019,75.64,,-,,,,,
+2020,70.17,,-,,,,,
+2021,79.43,,-,,,,,
+2022,80.22,,-,,,,,
+2023,92.48,,-,12.5,6.92,,,
+2024,97.32,,-,13.0,7.2,,,
+2025,101.99,6.5,forecast,13.5,7.5,40.0,,
+2026,106.5,6.5,forecast,14.5,8.2,,30.0,40.0
+2027,113.0,6.5,forecast,15.5,8.8,,,
+2028,120.0,6.5,forecast,16.8,9.4,,,
+2029,120.5,6.5,forecast,18.0,9.9,,,
+2030,140.0,6.5,forecast,19.2,10.3,,,
+2031,160.0,6.5,forecast,20.0,10.9,,,
+2032,180.0,6.5,forecast,20.8,11.5,,,
+2033,250.0,7.0,forecast,21.5,12.0,,,
