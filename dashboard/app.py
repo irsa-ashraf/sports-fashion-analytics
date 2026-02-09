@@ -12,7 +12,7 @@ from pathlib import Path
 # Page config
 st.set_page_config(
     page_title="Sports-Fashion Analytics",
-    page_icon="🎾",
+    page_icon="",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -62,7 +62,7 @@ data['trends']['date'] = pd.to_datetime(data['trends']['date'])
 data['challengers']['date'] = pd.to_datetime(data['challengers']['date'])
 
 # Header
-st.markdown('<div class="main-header">🎾 Sports Meets Fashion 👟</div>', unsafe_allow_html=True)
+st.markdown('<div class="main-header"> Sports Meets Fashion </div>', unsafe_allow_html=True)
 st.markdown('<div class="sub-header">Data-Driven Analysis of the Sports-Fashion Intersection</div>', unsafe_allow_html=True)
 
 # Key Metrics
@@ -131,12 +131,26 @@ with tab1:
         ))
         
         # Add Challengers release marker
-        fig_trends.add_vline(
-            x=pd.Timestamp('2024-04-26'),
-            line_dash="dash",
-            line_color="orange",
-            annotation_text="Challengers Release",
-            annotation_position="top right"
+        # Add vertical line
+        fig_trends.add_shape(
+            type="line",
+            x0='2024-04-26',
+            x1='2024-04-26',
+            y0=0,
+            y1=1,
+            yref='paper',
+            line=dict(color="orange", width=2, dash="dash")
+        )
+
+        # Add annotation
+        fig_trends.add_annotation(
+            x='2024-04-26',
+            y=1,
+            yref='paper',
+            text="Challengers Release",
+            showarrow=False,
+            yanchor='bottom',
+            xanchor='right'
         )
         
         fig_trends.update_layout(
@@ -291,14 +305,28 @@ with tab3:
         ))
         
         # Add World Cup marker
-        fig_soccer.add_vline(
-            x=pd.Timestamp('2026-06-11'),
-            line_dash="dash",
-            line_color="green",
-            annotation_text="World Cup 2026 Kickoff",
-            annotation_position="top right"
+        # Add vertical line
+        fig_soccer.add_shape(
+            type="line",
+            x0='2026-06-11',
+            x1='2026-06-11',
+            y0=0,
+            y1=1,
+            yref='paper',
+            line=dict(color="green", width=2, dash="dash")
         )
-        
+
+        # Add annotation
+        fig_soccer.add_annotation(
+            x='2026-06-11',
+            y=1,
+            yref='paper',
+            text="World Cup Kickoff",
+            showarrow=False,
+            yanchor='bottom',
+            xanchor='right'
+        )
+                
         fig_soccer.update_layout(
             title="Soccer Jersey Search Trends (Building to WC 2026)",
             xaxis_title="Date",
