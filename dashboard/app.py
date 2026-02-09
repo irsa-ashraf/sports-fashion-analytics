@@ -266,7 +266,7 @@ with tab2:
         **Market Dynamics:**
         - Base market: **$92.5B (2023)** → **$250B (2033)**
         - CAGR: **7.0%** over forecast period
-        - Women's jersey sales: **+40% in 2023** (World Cup year)
+        - Women's jersey sales: **+40% in 2022** (Men's World Cup year)
         - Custom jersey demand: **+30%** (personalization trend)
         
         **Key Segments:**
